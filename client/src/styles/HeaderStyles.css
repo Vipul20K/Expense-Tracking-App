@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 60px;
+    min-height: 60px; /* Fixed height for consistency */
 }
 
 /* Brand styling */
@@ -21,10 +21,8 @@
 
 /* Remove default list styles */
 .nav-links {
-    top: 70px;
     display: flex;
     align-items: center;
-    z-index: 999;
     gap: 15px;
     list-style: none;  /* ✅ Removed bullet points */
     padding: 0;
@@ -74,42 +72,38 @@
     color: white;
     cursor: pointer;
     margin-left: auto; /* ✅ Ensures it stays on the right */
+    padding: 0; /* Remove default padding */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-
-    .navbar{
-        padding: 80px 20px;
+    .navbar {
+        padding: 10px 20px; /* Reduced padding */
     }
+
     .menu-toggler {
-        display:block;
+        display: block;
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
+        position: relative; /* Changed to relative */
         background-color: var(--primary-color);
         width: 100%;
-        padding: 10px 0;
+        padding: 20px 0; /* Increased padding */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
+        max-height: 200px; /* Adjust as needed */
+        overflow-y: auto; /* Allow scrolling if content overflows */
     }
 
     .nav-links.active {
         display: flex;
-        position: relative;
-        width: 100%;
-    }
-
-    .nav-links .nav-item {
-        padding: 10px 0;
     }
 
     .custom-logout-btn {
+        padding: 8px 24px 8px 16px;
         width: 90%;
         margin: 10px auto;
     }

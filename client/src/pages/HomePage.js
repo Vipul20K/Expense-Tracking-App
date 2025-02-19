@@ -9,7 +9,6 @@ import moment from 'moment';
 import Analytics from '../components/Analytics';
 import '../styles/HomePageStyles.css';
 const API_URL = process.env.REACT_APP_API_URL;
-// import axiosInstance from '../utils/axiosInstance';
 
 
 
@@ -53,7 +52,7 @@ const HomePage =()=>{
   {
     title: "Actions",
     render:(text,record)=>(
-      <div>
+      <div style={{ display: 'flex', whiteSpace: 'nowrap' }}>
         <EditOutlined onClick={()=>{
           setEditable(record);
           setShowModal(true);
@@ -164,6 +163,7 @@ const handleDelete=async(record)=>{
 
       if (editable) {
         await axios.post(`${API_URL}/api/v1/transactions/edit-transaction`, {
+       
           payload: {
             ...values,
             userId: user._id,
@@ -180,6 +180,7 @@ const handleDelete=async(record)=>{
         message.success("Transaction Updated Successfully");
       } else {
         await axios.post(`${API_URL}/api/v1/transactions/add-transaction`, {
+    
           userid: user._id,
           ...values,
         },
@@ -251,7 +252,10 @@ const handleDelete=async(record)=>{
 
       <div className="content">
         {viewData === "table" ? (
-          <Table columns={columns} dataSource={allTransactions} />
+          <div style={{overflowX:'auto'}}>
+          <Table columns={columns} dataSource={allTransactions}
+          scroll={{ x: true }} />
+          </div>
         ) : (
           <Analytics allTransactions={allTransactions} />
         )}

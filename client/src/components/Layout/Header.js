@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../styles/HeaderStyles.css";
 import { UserOutlined, MenuOutlined, CloseOutlined } from "@ant-design/icons";
 
+
 const Header = () => {
   const [loginUser, setLoginUser] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,7 +32,7 @@ const Header = () => {
         <div className="container-fluid">
           {/* Brand Name */}
           <Link className="navbar-brand" to="/">
-            Expense Tracker
+            Expense Tracker 💸
           </Link>
 
           {/* Mobile Menu Toggler */}

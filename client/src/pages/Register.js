@@ -1,28 +1,29 @@
-import React,{useState,useEffect} from 'react';
+import React,{useEffect} from 'react';
 import {Form,Input,message} from 'antd';
 import { Link,useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Spinner from '../components/Spinner';
+
 import "../styles/RegisterPage.css";
-import axiosInstance from '../utils/axiosInstance';
 const API_URL = process.env.REACT_APP_API_URL;
+
 
 
 const Register=()=>{
 
     const navigate=useNavigate();
-    const [loading,setLoading]=useState(false);
+   
     // form submit
     const submitHandler=async(values)=>{
         try{
-            setLoading(true);
+           
             console.log(values);
             await axios.post(`${API_URL}/api/v1/users/register`,values);
+            await axios.post(`${API_URL}/api/v1/users/register`,values);
             message.success("Registration Successful");
-            setLoading(false);
+          
             navigate('/login');
         }catch(error){
-            setLoading(false);
+            
             message.error(error.response?.data?.message || "Something went wrong");
         }
     };
@@ -39,7 +40,7 @@ const Register=()=>{
     return (
         <>
           <div className="register-page ">
-            {loading && <Spinner />}
+          
             <Form
               className="register-form"
               layout="vertical"

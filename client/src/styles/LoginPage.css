@@ -1,12 +1,4 @@
 
-:root {
-    --primary-color: #6c5ce7; 
-    --secondary-color: #00b894; 
-    --background-gradient: linear-gradient(135deg, #f5f7fa, #c3cfe2); 
-    --text-color: #2d3436; 
-    --hover-color: #0984e3; 
-    --shadow-color: rgba(0, 0, 0, 0.1); 
-}
 
 /* Full-page container */
 .login-page {

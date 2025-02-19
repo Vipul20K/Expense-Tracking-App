@@ -1,23 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Form, Input, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Spinner from "../components/Spinner";
 import "../styles/LoginPage.css";
 const API_URL = process.env.REACT_APP_API_URL;
-
 
 const Login = () => {
   const img =
     "https://akriviahcm.com/blog/wp-content/uploads/2024/05/10-Features-to-Look-for-in-Expense-Management-System.jpg";
 
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
   const submitHandler = async (values) => {
     try {
-      setLoading(true);
       const { data } = await axios.post(`${API_URL}/api/v1/users/login`, values);
-      setLoading(false);
       message.success("Login Successful");
       localStorage.setItem(
         "user",
@@ -31,7 +26,6 @@ const Login = () => {
 
       navigate("/");
     } catch (error) {
-      setLoading(false);
       message.error("something went wrong");
     }
   };
@@ -41,7 +35,7 @@ const Login = () => {
   return (
     <>
       <div className="login-page">
-        {loading && <Spinner />}
+  
         <div className="row container align-items-center">
           <h1 className="text-center">Expense Management System</h1>
 
