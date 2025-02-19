@@ -5,6 +5,7 @@ import axios from 'axios';
 import Spinner from '../components/Spinner';
 import "../styles/RegisterPage.css";
 import axiosInstance from '../utils/axiosInstance';
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 const Register=()=>{
@@ -16,7 +17,7 @@ const Register=()=>{
         try{
             setLoading(true);
             console.log(values);
-            await axios.post('/api/v1/users/register',values);
+            await axios.post('${API_URL}/api/v1/users/register',values);
             message.success("Registration Successful");
             setLoading(false);
             navigate('/login');
