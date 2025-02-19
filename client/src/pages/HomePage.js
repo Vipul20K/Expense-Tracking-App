@@ -83,7 +83,7 @@ const getAllTransactions = useCallback(async () => {
     setLoading(true);
 
     // Add the token to the Authorization header as a Bearer token
-    const res = await axios.post('${API_URL}/api/v1/transactions/get-transaction', {
+    const res = await axios.post(`${API_URL}/api/v1/transactions/get-transaction`, {
       userid: user._id,
       frequency,
       selectedDate,
@@ -123,7 +123,7 @@ const handleDelete=async(record)=>{
     }
 
     setLoading(true);
-    await axios.post('${API_URL}/api/v1/transactions/del-transaction',{transactionId:record._id}
+    await axios.post(`${API_URL}/api/v1/transactions/del-transaction`,{transactionId:record._id}
       ,{
         headers:{
           'Authorization':`Bearer ${token}`,
@@ -163,7 +163,7 @@ const handleDelete=async(record)=>{
       setLoading(true);
 
       if (editable) {
-        await axios.post("${API_URL}/api/v1/transactions/edit-transaction", {
+        await axios.post(`${API_URL}/api/v1/transactions/edit-transaction`, {
           payload: {
             ...values,
             userId: user._id,
