@@ -179,7 +179,7 @@ const handleDelete=async(record)=>{
         setLoading(false);
         message.success("Transaction Updated Successfully");
       } else {
-        await axios.post("api/v1/transactions/add-transaction", {
+        await axios.post(`${API_URL}/api/v1/transactions/add-transaction`, {
           userid: user._id,
           ...values,
         },
