@@ -14,6 +14,10 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 5000;
 
+//default route
+app.get("/", (req, res) => res.send("Server is running!"));
+
+
 //user routes
 app.use('/api/v1/users', userRoute);  //api/v1/users is a base route
 
