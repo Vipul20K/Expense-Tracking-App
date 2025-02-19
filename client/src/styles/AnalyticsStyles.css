@@ -1,0 +1,98 @@
+/* Analytics Main Container */
+.analytics-container {
+    padding: 20px;
+    min-height: calc(100vh - 150px); /* Prevent footer overlap */
+    background-color: #f8f9fa;
+}
+
+/* Analytics Card */
+.analytics-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* Header inside Cards */
+.analytics-header {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Card Body */
+.analytics-body {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Income & Expense Text Colors */
+.income-text {
+    color: green;
+    font-weight: bold;
+}
+
+.expense-text {
+    color: red;
+    font-weight: bold;
+}
+
+/* Circular Progress Containers */
+.progress-circle-container {
+    display: flex;
+  flex-direction: column;
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Align items horizontally */
+  gap: 15px; /* Space between progress circles */
+  margin: 0 auto; /* Ensures it's centered within the parent container */
+  padding: 15px; /* Add padding to avoid overflow */
+}
+
+
+/* Ensure the progress circle doesn't break the container */
+.progress-circle {
+    max-width: 100%; /* Ensure it fits within the container */
+    max-height: 100%; 
+  }
+
+/* Progress Bar Container */
+.analytics-progress-container {
+    padding: 10px;
+}
+
+/* Titles */
+.analytics-title {
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Background Colors */
+.income-bg {
+    background-color: #28a745; /* Green for income */
+    color: white;
+}
+
+.expense-bg {
+    background-color: #dc3545; /* Red for expenses */
+    color: white;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .progress-circle-container {
+        flex-direction: column;
+    }
+    
+    .analytics-card {
+        padding: 10px;
+    }
+}

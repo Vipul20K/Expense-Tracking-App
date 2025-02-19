@@ -1,0 +1,110 @@
+
+:root {
+    --primary-color: #6c5ce7; 
+    --secondary-color: #00b894; 
+    --background-gradient: linear-gradient(135deg, #f5f7fa, #c3cfe2); 
+    --text-color: #2d3436; 
+    --hover-color: #0984e3; 
+    --shadow-color: rgba(0, 0, 0, 0.1); 
+}
+
+/* Base styles for the register page */
+.register-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: var(--background-gradient);
+    padding: 20px;
+}
+
+/* Form container */
+.register-form {
+    background-color: #fff;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+/* Form heading */
+.register-form h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 26px;
+}
+
+/* Form labels */
+.register-form .ant-form-item-label label {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Input fields */
+.register-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 14px;
+}
+
+.register-form input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.3); /* Soft glow effect */
+    outline: none;
+}
+
+/* Links */
+.register-form a {
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.register-form a:hover {
+    color: var(--hover-color) !important;
+}
+
+/* Buttons */
+.register-form button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.register-form button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .register-form {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    .register-form h2 {
+        font-size: 22px;
+    }
+}

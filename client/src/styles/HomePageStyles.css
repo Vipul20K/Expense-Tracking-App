@@ -1,0 +1,136 @@
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #f39c12;
+    --background-color: #f4f4f4;
+    --card-bg-color: #ffffff;
+    --text-color: #333333;
+    --hover-color: #9b59b6;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.filter-tab {
+    width: 30%;
+}
+
+.filter-tab h6 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.switch-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch-icons .active-icon {
+    color: var(--primary-color);
+}
+
+.switch-icons .inactive-icon {
+    color: var(--text-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-color);
+}
+
+.content {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.card h5 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.card .card-body {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.modal-footer {
+    text-align: right;
+}
+
+.modal-footer button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.modal-footer button:hover {
+    background-color: var(--hover-color);
+}
+
+.ant-modal-header {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ant-modal-body {
+    background-color: var(--card-bg-color);
+}
+
+.ant-select-selector {
+    border-color: var(--primary-color) !important;
+}
+
+.ant-input {
+    border-color: var(--primary-color) !important;
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .filter-tab {
+        width: 100%;
+    }
+
+    .switch-icons {
+        justify-content: space-between;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+}
