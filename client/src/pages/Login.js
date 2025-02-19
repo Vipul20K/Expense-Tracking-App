@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Spinner from "../components/Spinner";
 import "../styles/LoginPage.css";
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 const Login = () => {
@@ -15,7 +16,7 @@ const Login = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      const { data } = await axios.post("api/v1/users/login", values);
+      const { data } = await axios.post("${API_URL}/api/v1/users/login", values);
       setLoading(false);
       message.success("Login Successful");
       localStorage.setItem(
