@@ -18,7 +18,6 @@ const Register=()=>{
            
             console.log(values);
             await axios.post(`${API_URL}/api/v1/users/register`,values);
-            await axios.post(`${API_URL}/api/v1/users/register`,values);
             message.success("Registration Successful");
           
             navigate('/login');
